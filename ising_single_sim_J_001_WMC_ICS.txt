@@ -1,0 +1,25 @@
+# 2D Ising model simulation initial conditions file.
+
+# Filename
+filename = ising_single_sim_J_001_WMC_ICS
+
+# Lattice side length
+side_length = 64
+
+# Magnetic Field
+magnetic_field_B = 0
+
+# Temperature
+temperature = 2.269185
+
+# Coupling constant in joules
+exchange_constant_J = 0.01
+
+# Boltzmann Constant 
+k_b = 1
+
+# Bohr Magneton
+u_b = 0
+
+# Number of steps
+nsteps = 15000

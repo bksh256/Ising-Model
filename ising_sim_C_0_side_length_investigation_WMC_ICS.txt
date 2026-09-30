@@ -1,0 +1,32 @@
+# 2D Ising model simulation initial conditions file - Investigating the relation between heat capacity and lattice size for a constant temperature.
+
+# Filename
+filename = ising_sim_C_0_side_length_investigation_WMC
+
+# Initial lattice side length
+initial_side_length = 4
+
+# Magnetic Field
+magnetic_field_B = 0.0
+
+# Temperature
+temperature = 2.269185
+
+# Lattice side length step
+lattice_side_length_step = 1
+
+# Coupling constant in joules
+exchange_constant_J = 1.0
+
+# Boltzmann Constant 
+k_b = 1.0
+
+# Bohr Magneton
+u_b = 0.0
+
+# Number of WMC steps per run
+# One WMC step is one cluster flip
+nsteps = 15000
+
+# Number of runs
+nruns = 125

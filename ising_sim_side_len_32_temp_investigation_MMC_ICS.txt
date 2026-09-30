@@ -1,0 +1,32 @@
+# 2D Ising model simulation initial conditions file - Investigating the critical temperature.
+
+# Filename
+filename = ising_sim_side_len_32_temp_investigation_MMC
+
+# Lattice side length
+side_length = 32
+
+# Magnetic Field
+magnetic_field_B = 0.0
+
+# Initial Temperature - This will be increased by temp_step every run
+initial_temperature = 2
+
+# Temp step
+temp_step = 0.001
+
+# Coupling constant in joules
+exchange_constant_J = 1.0
+
+# Boltzmann Constant 
+k_b = 1.0
+
+# Bohr Magneton
+u_b = 0.0
+
+# Number of MMC steps per run
+nsteps = 15000000
+
+# Number of runs
+nruns = 500
+
