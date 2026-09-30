@@ -1,5 +1,5 @@
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Introduction
+Introduction
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This code is a python3 jupter notebook that simulates the 2D, 2-spin Ising Model using both the Wolff and Metropolis algorithms and provides numerical validations of the Ising Model's critical exponents and critical temperature, as well as plots and graphical lattice diagrams made using matplotlib to show how the lattice's properties vary with the initial conditions the system is simulated under. Please see the LaTeX report pdf for a detailed explanation of the code and the scientific results.
@@ -7,7 +7,7 @@ This code is a python3 jupter notebook that simulates the 2D, 2-spin Ising Model
 I wrote this code as my MPhys Computational Physics final programming project at the University of Exeter in March 2026. This repository contains all the python files, parameter files, final report and feedback excel spreadsheet received after coursework submission.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Operating Systems and CPU architecture dependencies and requirements
+Operating Systems and CPU architecture dependencies and requirements
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Any version of Windows, MacOS or Linux capable of running python3 will work. This code has been tested on both x86 Windows, x86 Linux and ARM Apple Silicon CPU architectures. I haven't yet been able to test it on ARM Windows or ARM Linux, but if the python install is natively compiled for your CPU architecture and operating system there is a very good chance it will work just fine.
@@ -17,7 +17,7 @@ WARNING: It is not recommended to run this code through a python install that is
 The sole exception to this rule is running it under WSL2 in Windows since this uses a genuine Linux image designed for the host CPU architecture (x86 and ARM supported). 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Python module dependencies (Minimum versions)
+Python module dependencies (Minimum versions)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 python >= 3.10.0 (recommended)
@@ -35,7 +35,7 @@ Anaconda or miniconda are highly recommended, since these tools allow you to ins
 WARNING: The .py multiprocessing worker files and all the .txt parameter files downloaded from GitHub must be present in the same directory / folder on your system for the code to work correctly. The code is designed to throw errors and stop running if it detects any of the parameter files are missing.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Running the code
+Running the code
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 To run the code, please install Jupyter Notebook inside your python or conda environment. 
@@ -55,7 +55,7 @@ cd /path/to/Ising_Model_Metropolis_and_Wolff_Monte_Carlo.ipynb
 jupyter execute Ising_Model_Metropolis_and_Wolff_Monte_Carlo.ipynb
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Critical Temperature Validation
+Critical Temperature Validation
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The code is designed to validate the Ising Model by using both of these numerical Monte-Carlo methods to calculate Onsager's landmark 1944 solution for the critical temperature (2.269K) using four different methods:
@@ -71,7 +71,7 @@ Method 4: Average of the previous 3 methods to get a statistically averaged resu
 This is done by running hundreds of Ising Model simulations with different temperatures and analysing the results. This is where multiprocessing comes in handy: Each logical thread on the CPU can spawn a single Ising Model simulation, and this is repeated using a for loop to spawn one simulation on each thread, each with a different temperature until the temperature range is exhausted and the critical temperature can be calculated. The lower the temperature step in the parameter file and the higher the amount of Ising model simulations run, the more precise the value for the critical temperature will be given the temperature range steps over Onsager's known value. This procedure, using multiprocessing to perform different runs at different temperatures simultaneously across all available logical threads
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Critical Exponent Validation
+Critical Exponent Validation
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The three critical exponents, Alpha, Beta and Gamma, are either calculated or verified (especially in the case of the Alpha exponent) using the same variable temperature multiprocessing runs as the critical temperature.
@@ -87,7 +87,7 @@ Gamma: Onsager's 1944 result for the critical exponent Gamma is -7/8. Gamma is v
 These methods are done for both the Metropolis-Hastings and Wolff Algorithms, so the results from the different algorithms can be compared.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Calculating the Onsager Critical Amplitude
+Calculating the Onsager Critical Amplitude
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The Onsager Critical Amplitude is a coefficient relating the heat capacity C and the logarithm of the lattice size. Due to the laws of logarithms (please see section 2.9 in the report for the mathematical reasoning) if the heat capacity is related to the lattice side length (so sqrt(num_of_spins)) the gradient of a graph showing the logarithm of lattice size against heat capacity will be exactly half of that of the Onsager Critical Amplitude. In order to validate Onsager's Critical Amplitude, the code uses the same multiprocessing method as before but rather than spawning simulations with a different temperature, the lattice size is changed. The logarithm of the lattice size is then plotted against the heat capacity, and the value of half of the Onsager Critical Amplitude is then extracted from a linear regression fit. 
@@ -95,7 +95,7 @@ The Onsager Critical Amplitude is a coefficient relating the heat capacity C and
 This method are done for both the Metropolis-Hastings and Wolff Algorithms, so the results from the different algorithms can be compared.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Visualising the effect of changing the Initial Conditions
+Visualising the effect of changing the Initial Conditions
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 The next section of the code is designed for visualising the effects of changing the following initial conditions four times (so where applicable, two small and two large values for both positive and negative parameters), using both of the Metropolis Hastings and Wolff Algorithms. 
